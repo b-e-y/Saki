@@ -23,7 +23,7 @@ client.on('ready', () => {
     });
 
     command(client, 'clear', async (message) => {
-        await clear(client, message, message.content.split(' '));
+        await new clear(client, message, message.content.split(' '));
     });
     
     
