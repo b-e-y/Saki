@@ -9,12 +9,11 @@ client.on('ready', () => {
     console.log('The client is ready!')
 
     command(client, 'ping', (message) => {
-        message.channel.send('Pong!')
+        message.channel.send(`Pong! ${client.ws.ping}ms`);
     })
     
     command(client, 'membercount', (message) => {
         client.guilds.cache.forEach((guild) => {
-            //console.log(guild);
             let embed = new Discord.MessageEmbed()
                 .setAuthor(message.author.username, `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}`)
                 .setTitle(`${guild.name} has total of ${guild.memberCount} members`);
