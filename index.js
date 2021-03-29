@@ -6,12 +6,19 @@ const config = require('./config.json')
 const CommandsRouter = require('./CommandsRouter');
 const command = require('./command')
 const clear = require('./clear');
-const helpCommand = require('./help');
+
+const EventEmitter = require('events');
+
+
+
+const emitter = new EventEmitter();
+emitter.setMaxListeners(100);
 
 client.on('ready', () => {
     console.log('The client is ready!')
 
     
+   
     command(client, 'membercount', (message) => {
         client.guilds.cache.forEach((guild) => {
             let embed = new Discord.MessageEmbed()
@@ -34,8 +41,11 @@ client.on('ready', () => {
         })
     })
 
+    command(client, 'serverinfo', (message) => {
+        message.channel.send('coming soon')
+    })
+   
     new CommandsRouter(client);
-    // new helpCommand(client);
     new clear(client);
 })
 

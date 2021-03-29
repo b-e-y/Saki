@@ -1,4 +1,10 @@
 const { prefix } = require('./config.json')
+const EventEmitter = require('events');
+
+
+
+const emitter = new EventEmitter();
+emitter.setMaxListeners(100);
 
 module.exports = (client, aliases, callback) => {
     if (typeof aliases === 'string') {
