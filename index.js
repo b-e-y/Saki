@@ -2,6 +2,8 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const config = require('./config.json')
+
+const CommandsRouter = require('./CommandsRouter');
 const command = require('./command')
 const clear = require('./clear');
 const helpCommand = require('./help');
@@ -9,9 +11,6 @@ const helpCommand = require('./help');
 client.on('ready', () => {
     console.log('The client is ready!')
 
-    command(client, 'ping', (message) => {
-        message.channel.send(`Pong! ${client.ws.ping}ms`);
-    });
     
     command(client, 'membercount', (message) => {
         client.guilds.cache.forEach((guild) => {
@@ -35,7 +34,8 @@ client.on('ready', () => {
         })
     })
 
-    new helpCommand(client);
+    new CommandsRouter(client);
+    // new helpCommand(client);
     new clear(client);
 })
 
