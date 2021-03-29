@@ -22,16 +22,20 @@ client.on('ready', () => {
         });
     });
     
+    command(client, 'status', message => {
+        const content = message.content.replace('.status ', '')
+
+
+        client.user.setPresence({
+            activity: {
+                name: content,
+                type: 0,
+            },
+        })
+    })
+
+
     new clear(client);
-
-    // command(client, ['clear', 'purge'], message => {
-    //     if (message.member.hasPermission('ADMINISTRATOR')) {
-    //         message.channel.messages.fetch().then((results) => {
-    //             message.channel.bulkDelete(results)
-    //         })
-    //     }
-    // })
-
 })
 
 //client.login(process.env.SAKI_TOKEN)
