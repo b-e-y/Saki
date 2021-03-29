@@ -10,7 +10,7 @@ client.on('ready', () => {
 
     command(client, 'ping', (message) => {
         message.channel.send(`Pong! ${client.ws.ping}ms`);
-    })
+    });
     
     command(client, 'membercount', (message) => {
         client.guilds.cache.forEach((guild) => {
@@ -20,7 +20,11 @@ client.on('ready', () => {
 
             message.channel.send(embed);
         });
-    })
+    });
+
+    command(client, 'clear', message => {
+        clear(client, message, message.split(' '));
+    });
     
     
 
