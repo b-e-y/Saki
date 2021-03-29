@@ -80,7 +80,7 @@ class Commands {
                 let url = urls[this.getRandomInt(0, urls.length)];
 
                 let embed = new Discord.MessageEmbed()
-                    .setTitle(`${message.author.username} hugged ${userToHug.username}!`)
+                    .setTitle(`${message.author.username} hugs ${userToHug.username}!`)
                     .setImage(url)
                     .setFooter(config.defaultFooter);
 
@@ -114,7 +114,7 @@ class Commands {
                 let url = urls[this.getRandomInt(0, urls.length)];
 
                 let embed = new Discord.MessageEmbed()
-                    .setTitle(`${message.author.username} patted ${userToPat.username}!`)
+                    .setTitle(`${message.author.username} pats ${userToPat.username}!`)
                     .setImage(url)
                     .setFooter(config.defaultFooter);
 
@@ -148,7 +148,7 @@ class Commands {
                 let url = urls[this.getRandomInt(0, urls.length)];
 
                 let embed = new Discord.MessageEmbed()
-                    .setTitle(`${message.author.username} kissed ${userToKiss.username}!`)
+                    .setTitle(`${message.author.username} kisses ${userToKiss.username}!`)
                     .setImage(url)
                     .setFooter(config.defaultFooter);
 
