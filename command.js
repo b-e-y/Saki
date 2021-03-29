@@ -11,7 +11,7 @@ module.exports = (client, aliases, callback) => {
         aliases.forEach(alias => {
             const command = `${prefix}${alias}`
 
-            if(content.startsWith(`{command} `) || content === command) {
+            if(content.startsWith(command) || content === command) {
                 //console.log(`Running the command ${command}`) this would be called everytime someone runs a command so im removing this
                 callback(message)
             }

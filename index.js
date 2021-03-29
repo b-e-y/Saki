@@ -21,12 +21,8 @@ client.on('ready', () => {
             message.channel.send(embed);
         });
     });
-
-    command(client, 'clear', async (message) => {
-        await new clear(client, message, message.content.split(' '));
-    });
     
-    
+    new clear(client);
 
     // command(client, ['clear', 'purge'], message => {
     //     if (message.member.hasPermission('ADMINISTRATOR')) {
