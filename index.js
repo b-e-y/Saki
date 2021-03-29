@@ -4,6 +4,7 @@ const client = new Discord.Client()
 const config = require('./config.json')
 const command = require('./command')
 const clear = require('./clear');
+const helpCommand = require('./help');
 
 client.on('ready', () => {
     console.log('The client is ready!')
@@ -34,7 +35,7 @@ client.on('ready', () => {
         })
     })
 
-
+    new helpCommand(client);
     new clear(client);
 })
 
